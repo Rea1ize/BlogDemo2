@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/black"
+    tools:context=".module.guide.GuideActivity">
+
+    <!--用来显示图标图片-->
+    <ImageView
+        android:id="@+id/mImageViews"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+
+    <!--ViewPager用来显示文字图片，其实我们滑动的仅仅是文字图片而已，后面的图标变化是我们去监听文字图片的变化再去ImageView设置相应的图标变化-->
+    <android.support.v4.view.ViewPager
+        android:id="@+id/mViewPager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </android.support.v4.view.ViewPager>
+
+    <!-- app:layout_constraintBottom_toBottomOf="parent" 控件自身的底部与父控件的底部对齐-->
+    <Button
+        android:id="@+id/mRegister"
+        android:layout_width="match_parent"
+        android:layout_height="49dp"
+        android:layout_marginBottom="58dp"
+        android:layout_marginLeft="34dp"
+        android:layout_marginRight="34dp"
+        android:background="@drawable/guide_button"
+        android:padding="8dp"
+        android:text="现在就加入"
+        android:textColor="#ffffff"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <!-- app:layout_constraintRight_toRightOf="parent" 控件自身的右边与父控件的右边对齐-->
+    <!--  app:layout_constraintTop_toTopOf="parent" 控件自身的顶部与控件的顶部对齐-->
+    <TextView
+        android:id="@+id/mTxtLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="12dp"
+        android:text="登陆"
+        android:textColor="@android:color/white"
+        android:textSize="16sp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</android.support.constraint.ConstraintLayout>
