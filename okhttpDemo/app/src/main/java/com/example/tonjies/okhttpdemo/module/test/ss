@@ -1,0 +1,106 @@
+package com.example.administrator.net.module.okhttp.test4;
+
+import java.io.IOException;
+
+import okhttp3.Call;
+import okhttp3.Callback;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.Response;
+
+/**
+ * Okhttp同步请求和异步请求
+ */
+public class AsyncHttp {
+
+    /**
+     * 同步请求
+     * @param url
+     */
+    public static void sendRequest(String url) {
+        OkHttpClient client = new OkHttpClient();
+        Request request = new Request.Builder()
+                .url("http://www.wanandroid.com/tools/mockapi/2872/student").build();
+        try {
+            Response response = client.newCall(request).execute();
+            if (response.isSuccessful()) {
+                System.out.println(response.body().string());
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * 异步请求
+     */
+    public static void sendAsyncRequest(String url) {
+        System.out.println(Thread.currentThread().getId());
+        OkHttpClient okHttpClient = new OkHttpClient();
+        final Request request = new Request.Builder().url(url).build();
+        okHttpClient.newCall(request).enqueue(new Callback() {
+            @Override
+            public void onFailure(Call call, IOException e) {
+
+            }
+
+            @Override
+            public void onResponse(Call call, Response response) throws IOException {
+                if (response.isSuccessful()) {
+                    System.out.println(Thread.currentThread().getId());
+                }
+            }
+        });
+    }
+
+
+    public static void main(String[] args) {
+//        sendRequest("");
+
+
+
+
+
+        sendAsyncRequest("http://www.wanandroid.com/tools/mockapi/2872/student");
+    }
+}
+
+fun main(args: Array<String>) {
+    print("1")
+//    sendRequest()
+    sendAsyncRequest("http://www.wanandroid.com/tools/mockapi/2872/student")
+    print("2")
+}
+
+/**
+ * 同步请求
+ */
+fun sendRequest() {
+    val client = OkHttpClient()
+    val request: Request = Request.Builder()
+            .url("http://www.wanandroid.com/tools/mockapi/2872/student")
+            .build()
+    val reponse = client.newCall(request).execute()
+    if (reponse.isSuccessful) {
+        println(reponse.body()!!.string())
+    }
+}
+
+/**
+ * 异步请求
+ */
+fun sendAsyncRequest(url: String) {
+    val okHttpClient = OkHttpClient()
+    val request: Request = Request.Builder().url(url).build()
+    okHttpClient.newCall(request).enqueue(object : Callback {
+        override fun onFailure(call: Call?, e: IOException?) {
+
+        }
+
+        override fun onResponse(call: Call?, response: Response?) {
+            if (response!!.isSuccessful) {
+                println(""+response.body()!!.string())
+            }
+        }
+    })
+}

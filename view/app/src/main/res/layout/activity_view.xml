@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".module.canvasx.ViewActivity">
+
+    <!--下面的是我们控件所在的包名，打出控件收字母就会有自动提示的-->
+    <com.example.tonjies.view.module.canvasx.XView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+ <!---->
+</android.support.constraint.ConstraintLayout>

@@ -34,7 +34,7 @@ public class InfoActivity extends AppCompatActivity implements InfoView{
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                infoPresenter.getData();//进行网络青丘
+                infoPresenter.getData();//进行网络请求
             }
         });
     }
