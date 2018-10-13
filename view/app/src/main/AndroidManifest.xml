@@ -15,11 +15,15 @@
         <activity android:name=".module.canvasx.ViewActivity" />
 
         <!-- paint -->
-        <activity android:name=".module.paint.ViewActivity">
+        <activity android:name=".module.paint.ViewActivity"></activity>
+
+        <!-- path -->
+        <activity android:name=".module.path.ViewActivity">
 
         </activity>
 
-        <activity android:name=".module.path.ViewActivity" >
+        <!--测试自定义一键删除，密码显示隐藏输入框的Activity-->
+        <activity android:name=".module.edit.EditActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

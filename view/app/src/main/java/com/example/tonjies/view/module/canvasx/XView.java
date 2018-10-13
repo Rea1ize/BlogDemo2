@@ -35,9 +35,8 @@ public class XView extends View {
     }
 
     /**
-     * 解释一下Canvas类，如果把XView类比作一个画板，那么Canvas就好比我们放在画板上的画纸，
+     * 如果把XView类比作一块画板，那么Canvas就好比我们放在画板上的画纸，
      * 之后我们绘制的东西，就是呈现在该画纸上
-     * @param canvas
      */
     @Override
     protected void onDraw(Canvas canvas) {
