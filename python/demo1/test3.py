@@ -1,13 +1,13 @@
 '''
 集合
 '''
-list = ['小红', '小紫', '小紫']
-print(list)
+list = ['小红', '小紫', '小紫'] #声明列表
+print(list) #输出列表
 
-s = {'小红', '小紫', '小紫'}
-print(s)
-s.add("小蓝")#添加元素
-s.remove("小红")#移除元素
-print(len(s))#计算元素个数
-s.clear()#清除元素
-print(s)
+set = {'小红', '小紫', '小紫'} #声明集合
+print(set) #输出集合
+set.add("小蓝")#添加元素
+set.remove("小红")#移除元素
+print(len(set))#计算元素个数
+set.clear()#清除元素
+print(set)
