@@ -26,7 +26,11 @@
 
 
 
+#### Mvp_java_b
 
+[地址](ps://www.jianshu.com/p/d00f912d81df)
+
+> 接着上一节Mvp_java_a的案例，对架构进行改进，再多封装了一层Model层
 
 
 
