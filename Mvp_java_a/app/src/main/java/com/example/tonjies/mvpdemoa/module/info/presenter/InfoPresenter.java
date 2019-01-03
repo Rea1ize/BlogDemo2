@@ -44,9 +44,9 @@ public class InfoPresenter {
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Observer<Student>() {
+                    //可以在这里拦截请求
                     @Override
                     public void onSubscribe(Disposable d) {
-
                     }
 
                     @Override
@@ -59,9 +59,10 @@ public class InfoPresenter {
                         infoView.show("获取失败"+e.getMessage());
                     }
 
+                    //请求完成
                     @Override
                     public void onComplete() {
-
+                        Log.d("helloWorld", "请求完成");
                     }
                 });
     }
